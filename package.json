@@ -1,0 +1,13 @@
+{
+  "name": "potepan-todo",
+  "version": "1.1.0",
+  "description": "ポテパンtodo stylish to-do list web app",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && node scripts/serve.mjs dist",
+    "predeploy": "npm run build",
+    "deploy": "node scripts/deploy.mjs"
+  }
+}

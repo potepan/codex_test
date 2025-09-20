@@ -1,4 +1,5 @@
 (() => {
+
   const STORAGE_KEY = 'daydream-tasks';
   const FILTER_KEY = 'daydream-tasks-filter';
   const VALID_FILTERS = new Set(['all', 'active', 'completed']);
@@ -287,7 +288,7 @@
         .map((item) => ({
           id: typeof item.id === 'string' && item.id ? item.id : createId(),
           title: typeof item.title === 'string' ? item.title : '名称未設定のタスク',
-          completed: Boolean(item.completed),
+          completed: normaliseCompleted(item.completed),
           dueDate:
             typeof item.dueDate === 'string' && item.dueDate ? item.dueDate : null,
           createdAt:
@@ -408,6 +409,36 @@
       hour: '2-digit',
       minute: '2-digit',
     }).format(date);
+  }
+
+  function normaliseCompleted(value) {
+    if (typeof value === 'boolean') {
+      return value;
+    }
+
+    if (typeof value === 'string') {
+      const normalised = value.trim().toLowerCase();
+      if (normalised === 'true' || normalised === '1' || normalised === 'yes') {
+        return true;
+      }
+      if (
+        normalised === 'false' ||
+        normalised === '0' ||
+        normalised === 'no' ||
+        normalised === ''
+      ) {
+        return false;
+      }
+    }
+
+    if (typeof value === 'number') {
+      if (Number.isNaN(value)) {
+        return false;
+      }
+      return value !== 0;
+    }
+
+    return Boolean(value);
   }
 
   function createId() {
