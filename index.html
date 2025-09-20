@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daydream Tasks | おしゃれなToDoリスト</title>
+    <meta
+      name="description"
+      content="洗練されたUIで予定を管理できるシンプルなToDoリスト。日々のタスクをスマートに整理しましょう。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <p class="eyebrow">Design your day</p>
+        <h1 class="app-title">Daydream Tasks</h1>
+        <p class="app-subtitle">
+          ひらめきや予定を、やさしい色彩の空間で整理しましょう。シンプルだけど
+          少し特別な、そんなToDoリストです。
+        </p>
+      </header>
+
+      <main>
+        <section class="todo-card" aria-labelledby="todo-heading">
+          <div class="card-header">
+            <h2 id="todo-heading">今日のやること</h2>
+            <p class="card-subtitle">直感的な操作でタスクをコーディネート</p>
+          </div>
+
+          <form id="task-form" class="task-form" autocomplete="off" novalidate>
+            <label class="sr-only" for="task-input">タスク名</label>
+            <input
+              id="task-input"
+              name="task"
+              class="task-input"
+              type="text"
+              placeholder="例：コーヒーブレイクの時間を確保"
+              required
+              maxlength="80"
+            />
+
+            <label class="sr-only" for="task-date">期日</label>
+            <input id="task-date" name="due" class="task-date" type="date" />
+
+            <button type="submit" class="add-button">追加</button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="toolbar">
+            <div class="filters" role="group" aria-label="表示を切り替える">
+              <button type="button" class="filter-button is-active" data-filter="all">
+                すべて
+              </button>
+              <button type="button" class="filter-button" data-filter="active">
+                進行中
+              </button>
+              <button type="button" class="filter-button" data-filter="completed">
+                完了
+              </button>
+            </div>
+
+            <div class="toolbar-meta">
+              <span id="task-counter" class="task-counter">0件のタスク</span>
+              <button type="button" id="clear-completed" class="clear-button">
+                完了を整理
+              </button>
+            </div>
+          </div>
+
+          <div class="list-wrapper" aria-live="polite">
+            <ul id="task-list" class="task-list" aria-label="タスクリスト"></ul>
+            <div id="empty-state" class="empty-state" hidden>
+              <div class="empty-icon" aria-hidden="true">✧</div>
+              <p>
+                新しいアイデアを追加して、あなたらしい一日をデザインしましょう。
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <small>日々の余白を大切に。Daydream Tasksがあなたのクリエイティブを後押しします。</small>
+      </footer>
+    </div>
+
+    <noscript>
+      <p class="noscript-message">
+        JavaScriptを有効にすると、タスクの追加や完了の管理ができるようになります。
+      </p>
+    </noscript>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
