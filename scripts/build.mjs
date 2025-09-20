@@ -53,7 +53,7 @@ function transformIndexHtml() {
 }
 
 function main() {
-  console.log('🛠  Building Daydream Tasks…');
+  console.log('🛠  Building ポテパンtodo…');
   ensureEmptyDist();
   transformIndexHtml();
   copyFile('styles.css');

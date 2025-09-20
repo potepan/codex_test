@@ -1,6 +1,6 @@
 (() => {
-  const STORAGE_KEY = 'daydream-tasks';
-  const FILTER_KEY = 'daydream-tasks-filter';
+  const STORAGE_KEY = 'potepan-todo';
+  const FILTER_KEY = 'potepan-todo-filter';
   const VALID_FILTERS = new Set(['all', 'active', 'completed']);
 
   const form = document.getElementById('task-form');
@@ -424,7 +424,7 @@
     }
 
     try {
-      const testKey = '__daydream-storage-test__';
+      const testKey = '__potepan-storage-test__';
       window.localStorage.setItem(testKey, testKey);
       window.localStorage.removeItem(testKey);
       return window.localStorage;

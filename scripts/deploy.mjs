@@ -116,7 +116,7 @@ function removeWorktree(directory) {
     ensureCleanWorkingTree();
     fetchRemote();
 
-    const tempBase = fs.mkdtempSync(path.join(os.tmpdir(), 'daydream-tasks-'));
+    const tempBase = fs.mkdtempSync(path.join(os.tmpdir(), 'potepan-todo-'));
     const worktreePath = resolveWorktreeTarget(tempBase);
 
     try {

@@ -1,6 +1,6 @@
-# Daydream Tasks
+# ポテパンtodo
 
-Daydream Tasksは、やわらかい色彩とガラス質感を取り入れたおしゃれなToDoリストです。ブラウザさえあれば、タスクの追加や完了管理、フィルター切り替えを直感的に行えます。
+ポテパンtodoは、やわらかい色彩とガラス質感を取り入れたおしゃれなToDoリストです。ブラウザさえあれば、タスクの追加や完了管理、フィルター切り替えを直感的に行えます。
 
 ## リポジトリの取得方法
 
@@ -9,8 +9,8 @@ Daydream Tasksは、やわらかい色彩とガラス質感を取り入れたお
 Git を利用できる場合は、次のコマンドでローカルにクローンします。GitHub でフォークしている場合は、ご自身のリポジトリ URL に読み替えてください。
 
 ```bash
-git clone https://github.com/<your-account>/daydream-tasks.git
-cd daydream-tasks
+git clone https://github.com/<your-account>/potepan-todo.git
+cd potepan-todo
 ```
 
 ### ZIP をダウンロードする
